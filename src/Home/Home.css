@@ -1,0 +1,174 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .home-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(238, 247, 248);
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    z-index: -1;
+  }
+  
+  .home-container::after {
+    content: "";
+    /* background-image: url(https://scontent.fewr1-6.fna.fbcdn.net/v/t39.30808-6/325897848_888802729231088_473285096808685131_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=ogW8NZZXqcIAX9KGh8N&_nc_ht=scontent.fewr1-6.fna&oh=00_AfDVBGgOPJ-eIbVNFo0ylCs680Ubhig-RE3e8NLbo3mnjA&oe=648C5227); */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+
+.trail-finder {
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(25, 92, 25);
+    margin-right: auto;
+    margin-left: 6em; 
+    margin-bottom: none;
+    padding: none;
+  }
+  
+  .home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: none;
+    padding: none;
+    height: 60px;
+    background-color: white;
+  }
+  
+  .right {
+    margin-right: 9em;
+    display: flex;
+    gap: 40px;
+    margin-bottom: none;
+    margin-left: auto;
+  }
+  
+  .link {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: none;
+  }
+  
+.featured-park h2 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.featured-park {
+    position: relative;
+    height: 35vh;
+}
+
+.featured-park img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resources{
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+}
+
+.link-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .link-box {
+    position: relative;
+    background-color: #fff;
+    border:5px solid #ffffff;
+    padding: 40px;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin: 20px;
+    flex: 0 0 300px; /* Set a fixed width for the boxes */
+    height: 300px; /* Adjust the height as desired */
+  }  
+
+  .link-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the darkness of the overlay */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .link-box:hover::before {
+    opacity: 1;
+  }
+  
+  .link-box h3 {
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: transparent; /* Hide the text by default */
+    transition: color 0.3s;
+  }
+  
+  .link-box:hover h3 {
+    color: #fff; /* Show the text on hover */
+  }
+  
+  .link-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the darkness of the overlay */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .link-box:hover::before {
+    opacity: 1;
+  }
+  
+  .quiz-box {
+    background-image: url('https://cf-images.us-east-1.prod.boltdns.net/v1/static/3281700261001/e8c5fa08-c2a4-4de1-bb05-467adaca2161/ad1f1d74-11c1-4959-84de-a751d0e18297/1280x720/match/image.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .map-box {
+    background-image: url('https://belayonadvisors.com/wp-content/uploads/2015/04/map-and-compass-1080x675.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
