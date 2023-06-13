@@ -1,41 +1,56 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Lottie from 'lottie-react';
 import './Home.css';
 
 const Home = () => {
   const [photo, setPhoto] = useState(null);
   const [park, setPark] = useState({ url: null, name: null });
   const [lastUpdate, setLastUpdate] = useState(localStorage.getItem('lastUpdate'));
+  const [isLoading, setIsLoading] = useState(false); // Add this state
+  const [animationData, setAnimationData] = useState(null);
 
-  const fetchParks = async () => {
-    try {
-      const parks = [];
+  const fetchParks = useCallback(async () => {
+    setIsLoading(true); // Start loading
+  
+    const cachedParks = localStorage.getItem('nationalParks');
+    let nationalParks = [];
+  
+    if (cachedParks) {
+      nationalParks = JSON.parse(cachedParks);
+    } else {
 
-      let start = 0;
-      const batchSize = 50;
-
-      while (true) {
-        const response = await axios.get('https://developer.nps.gov/api/v1/parks', {
-          params: {
-            limit: batchSize,
-            start,
-            api_key: 'hyH0Z9SbWd3rRNDSqJIZnaKp1qc0D8oWwgQapp5D',
-          },
-        });
-
-        parks.push(...response.data.data);
-
-        if (response.data.data.length < batchSize) {
-          break;
-        }
-
-        start += batchSize;
-      }
+      try {
+        const parks = [];
+  
+        let start = 0;
+        const batchSize = 50;
+  
+        while (true) {
+          const response = await axios.get('https://developer.nps.gov/api/v1/parks', {
+            params: {
+              limit: batchSize,
+              start,
+              api_key: 'hyH0Z9SbWd3rRNDSqJIZnaKp1qc0D8oWwgQapp5D',
+            },
+          });
+  
+          parks.push(...response.data.data);
+  
+          if (response.data.data.length < batchSize) {
+            break;
+          }
+  
+          start += batchSize;
+        }  
 
       // Filter parks to only include National Parks
       const nationalParks = parks.filter(park => park.designation === "National Park");
+
+         // Cache national parks to localStorage
+         localStorage.setItem('nationalParks', JSON.stringify(nationalParks));
 
       // Log all national parks to the console
       console.log(nationalParks);
@@ -51,25 +66,45 @@ const Home = () => {
 
       setPark({ url: parkPhoto, name: randomPark.fullName });
 
-      setPhoto(parkPhoto);
-      localStorage.setItem('photo', parkPhoto);
-
       const now = new Date();
       setLastUpdate(now);
       localStorage.setItem('lastUpdate', now);
 
+      const preloadImage = new Image();
+      preloadImage.src = parkPhoto;
+      preloadImage.onload = () => {
+        setPhoto(parkPhoto);
+        localStorage.setItem('photo', parkPhoto);
+        setIsLoading(false); // Stop loading when the image is loaded
+      };
+
     } catch (error) {
       console.error('Error fetching parks:', error);
+      // setIsLoading(false); // Stop loading even if there's an error
+    }
+  };
+}, []);
+
+useEffect(() => {
+  const fetchAnimationData = async () => {
+    try {
+      const response = await axios.get(
+        'https://assets10.lottiefiles.com/private_files/lf30_RbQsUF.json'
+      );
+      setAnimationData(response.data);
+    } catch (err) {
+      console.error('Failed to fetch animation data:', err);
     }
   };
 
-  useEffect(() => {
-    fetchParks();
-    const interval = setInterval(fetchParks, 10000); // fetch new parks every 10 seconds
-    return () => clearInterval(interval); // clean up on component unmount
-  }, []);
+  fetchAnimationData();
+}, []);
 
-  const LazyImage = lazy(() => import('./LazyImage'));
+useEffect(() => {
+  fetchParks();
+  const interval = setInterval(() => fetchParks(), 20000); // fetch new parks every 20 seconds
+  return () => clearInterval(interval); // clean up on component unmount
+}, [fetchParks]);
 
   return (
     <div className="home-container">
@@ -84,11 +119,9 @@ const Home = () => {
         </div>
       </header>
       <div className="featured-park">
-        {park.url && (
-          <Suspense fallback={<div>Loading...</div>}>
-            <LazyImage src={park.url} alt={park.name} />
-          </Suspense>
-        )}
+        {isLoading ? (
+          animationData && <Lottie animationData={animationData} style={{ width: 200, height: 200 }} />
+        ) : park.url && <img src={park.url} alt={park.name} />}
         {park.name && <h2>{park.name}</h2>}
       </div>
       <div>
