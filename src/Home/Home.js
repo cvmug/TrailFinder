@@ -9,11 +9,13 @@ const Home = () => {
   const [photo, setPhoto] = useState(null);
   const [park, setPark] = useState({ url: null, name: null });
   const [lastUpdate, setLastUpdate] = useState(localStorage.getItem('lastUpdate'));
-  const [isLoading, setIsLoading] = useState(false); // Add this state
+  const [isLoading, setIsLoading] = useState(false); 
   const [animationData, setAnimationData] = useState(null);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const fetchParks = useCallback(async () => {
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
+    setIsImageLoaded(false);
   
     const cachedParks = localStorage.getItem('nationalParks');
     let nationalParks = [];
@@ -21,69 +23,45 @@ const Home = () => {
     if (cachedParks) {
       nationalParks = JSON.parse(cachedParks);
     } else {
-
       try {
-        const parks = [];
-  
-        let start = 0;
-        const batchSize = 50;
-  
-        while (true) {
-          const response = await axios.get('https://developer.nps.gov/api/v1/parks', {
+        const response = await axios.get(
+          'https://developer.nps.gov/api/v1/parks',
+          {
             params: {
-              limit: batchSize,
-              start,
+              limit: 50,
+              designation: 'National Park',
               api_key: 'hyH0Z9SbWd3rRNDSqJIZnaKp1qc0D8oWwgQapp5D',
             },
-          });
-  
-          parks.push(...response.data.data);
-  
-          if (response.data.data.length < batchSize) {
-            break;
           }
+        );
   
-          start += batchSize;
-        }  
-
-      // Filter parks to only include National Parks
-      const nationalParks = parks.filter(park => park.designation === "National Park");
-
-         // Cache national parks to localStorage
-         localStorage.setItem('nationalParks', JSON.stringify(nationalParks));
-
-      // Log all national parks to the console
-      console.log(nationalParks);
-
-      // Ensure there is at least one National Park returned
-      if (!nationalParks.length) {
-        console.error('No national parks found.');
+        nationalParks = response.data.data;
+        localStorage.setItem('nationalParks', JSON.stringify(nationalParks));
+      } catch (error) {
+        console.error('Error fetching parks:', error);
+        setIsLoading(false);
         return;
       }
-
+    }
+  
+       if (nationalParks.length) {
       const randomPark = nationalParks[Math.floor(Math.random() * nationalParks.length)];
       const parkPhoto = randomPark.images[0].url;
 
       setPark({ url: parkPhoto, name: randomPark.fullName });
 
-      const now = new Date();
-      setLastUpdate(now);
-      localStorage.setItem('lastUpdate', now);
-
       const preloadImage = new Image();
       preloadImage.src = parkPhoto;
       preloadImage.onload = () => {
         setPhoto(parkPhoto);
-        localStorage.setItem('photo', parkPhoto);
-        setIsLoading(false); // Stop loading when the image is loaded
+        setIsImageLoaded(true);
+        setIsLoading(false);
       };
-
-    } catch (error) {
-      console.error('Error fetching parks:', error);
-      // setIsLoading(false); // Stop loading even if there's an error
+    } else {
+      console.error('No national parks found.');
+      setIsLoading(false);
     }
-  };
-}, []);
+  }, []);
 
 useEffect(() => {
   const fetchAnimationData = async () => {
@@ -102,41 +80,57 @@ useEffect(() => {
 
 useEffect(() => {
   fetchParks();
-  const interval = setInterval(() => fetchParks(), 20000); // fetch new parks every 20 seconds
+  const interval = setInterval(() => fetchParks(), 60000); // fetch new parks every 1 minute
   return () => clearInterval(interval); // clean up on component unmount
 }, [fetchParks]);
 
-  return (
-    <div className="home-container">
-      <header className="home-header">
-        <div className="left">
-          <h1 className="trail-finder">Trail Finder</h1>
-        </div>
-        <div className="right">
-          <Link to="/search" className="link"><FaSearch /></Link>
-          <Link to="/parks" className="link">Parks</Link>
-          <Link to="/contact" className="link">Contact</Link>
-        </div>
-      </header>
-      <div className="featured-park">
-        {isLoading ? (
-          animationData && <Lottie animationData={animationData} style={{ width: 200, height: 200 }} />
-        ) : park.url && <img src={park.url} alt={park.name} />}
-        {park.name && <h2>{park.name}</h2>}
+return (
+  <div className="home-container">
+    <header className="home-header">
+      <div className="left">
+        <h1 className="trail-finder">Trail Finder</h1>
       </div>
-      <div>
-        <h2 className="resources">Explore Our Resources</h2>
-        <div className="link-section">
-          <Link to="/map" className="link-box map-box">
-            <h3>National Parks Map</h3>
-          </Link>
-          <Link to="/quiz" className="link-box quiz-box">
-            <h3>Trail Finder Quiz</h3>
-          </Link>
+      <div className="right">
+        <Link to="/search" className="link"><FaSearch /></Link>
+        <Link to="/parks" className="link">Parks</Link>
+        <Link to="/contact" className="link">Contact</Link>
+      </div>
+    </header>
+    <div className="featured-park">
+      {isLoading ? (
+        <div className="loading-animation-container">
+          <div className="loading-animation">
+            <Lottie
+              animationData={animationData}
+              style={{ width: '600px', height: '600px' }}
+            />
+          </div>
         </div>
+      ) : (
+        park.url && (
+          <img
+            id="parkPhoto"
+            className="fade-in-out"
+            src={park.url}
+            alt={park.name}
+          />
+        )
+      )}
+      {park.name && <h2>{park.name}</h2>}
+    </div>
+    <div>
+      <h2 className="resources">Explore Our Resources</h2>
+      <div className="link-section">
+        <Link to="/map" className="link-box map-box">
+          <h3>National Parks Map</h3>
+        </Link>
+        <Link to="/quiz" className="link-box quiz-box">
+          <h3>Trail Finder Quiz</h3>
+        </Link>
       </div>
     </div>
-  );
-}
+  </div>
+);
+        }
 
 export default Home;
