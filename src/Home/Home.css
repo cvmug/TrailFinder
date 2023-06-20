@@ -3,7 +3,10 @@
     flex-direction: column;
     height: 100vh;
     position: relative;
+    justify-content: space-between;
+    /* Adjust the vertical alignment */
 }
+
 
 .home-container::before {
     content: "";
@@ -12,7 +15,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(209, 218, 200);
+    /* background-color: rgb(209, 218, 200); */
     /* background-color: rgba(255, 255, 255, 0.1); */
     z-index: -1;
 }
@@ -30,42 +33,6 @@
     z-index: -2;
 }
 
-.trail-finder {
-    font-family: 'Lobster', cursive;
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(25, 92, 25);
-    margin-right: auto;
-    margin-left: 6em;
-    margin-bottom: none;
-    padding: none;
-}
-
-.home-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: none;
-    padding: none;
-    height: 60px;
-    background-color: white;
-}
-
-.right {
-    margin-right: 9em;
-    display: flex;
-    gap: 40px;
-    margin-bottom: none;
-    margin-left: auto;
-}
-
-.link {
-    color: #000;
-    text-decoration: none;
-    font-size: 20px;
-    margin-bottom: none;
-}
-
 .featured-park h2 {
     position: absolute;
     bottom: 20px;
@@ -78,53 +45,75 @@
 
 .featured-park {
     position: relative;
-    height: 82vh;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    height: 60vh;
 }
 
 .featured-park img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 1; 
-    transition: opacity 0.5s; /* Transition property for the fade effect */
-  }
+    opacity: 1;
+    transition: opacity 0.5s;
+    /* Transition property for the fade effect */
+}
 
-  .featured-park img.fade-in-out {
-    opacity: 1; /* Visible when the fade-in-out class is added */
-  }
+.featured-park img.fade-in-out {
+    opacity: 1;
+    /* Visible when the fade-in-out class is added */
+}
 
-.resources {
-    font-family: 'Lobster', cursive;
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: rgb(25, 92, 25);
-    margin-top: 20px;
+.resources-links {
+    /* display: flex;
+    flex-direction: row;
+    align-items: flex-start; */
+    /* margin-top: 90px; */
+    margin-bottom: 50px;
+    padding-left: 1em;
+}
+
+.resources-heading {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    font-weight: 500;
+    color: rgb(16, 65, 16);
+    /* margin-top: 20px; */
     margin-bottom: 0px;
-    padding-bottom: 50px;
-    background-color: rgb(209, 218, 200);
+}
+
+.resources-subheading {
+    display: flex;
+    justify-content: center;
+    font-weight: 200;
+    color: rgb(16, 65, 16);
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 .link-section {
-    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
-    /* margin-top: 20px; */
-    background-color: rgb(209, 218, 200);
+    margin-bottom: 50px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .link-box {
+    border-radius: 5%;
     position: relative;
     border: 5px solid #ffffff;
-    padding: 40px;
+    padding: 20px;
     margin-bottom: 10px;
     text-align: center;
     transition: background-color 0.3s;
     /* margin: 20px; */
-    flex: 0 0 300px;
+    flex: 0 0 250px;
     /* Set a fixed width for the boxes */
-    height: 300px;
+    height: 250px;
     /* Adjust the height as desired */
 }
 
@@ -162,6 +151,7 @@
 }
 
 .link-box::before {
+    border-radius: 5%;
     content: "";
     position: absolute;
     top: 0;
@@ -175,6 +165,7 @@
 }
 
 .link-box:hover::before {
+    border-radius: 5%;
     opacity: 1;
 }
 
@@ -188,6 +179,30 @@
     background-image: url('https://belayonadvisors.com/wp-content/uploads/2015/04/map-and-compass-1080x675.jpg');
     background-size: cover;
     background-position: center;
+}
+
+.trending-box {
+    background-image: url('https://pcdn.columbian.com/wp-content/uploads/2015/09/Outdoors_10_Washington_Hi2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.forests-box {
+    background-image: url('https://www.tripsavvy.com/thmb/OOChkpfWdyybX2c6siPA31_0tpU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/autumn-color-and-snow-at-foot-of-mount-madison-in-presidential-range-of-new-hampshires-white-mountains--white-mountain-national-forest--new-hampshire--usa-556444377-5bff656d4cedfd002653df0d.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.local-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    /* Add width to make the local container take up full width */
+    /* margin-bottom: 40px; */
+    padding-bottom: 90px;
+    background-color: antiquewhite;
 }
 
 .loading-animation-container {
@@ -206,7 +221,4 @@
 
 .fade-in-out {
     transition: opacity 0.5s;
-  }
-  
-
-  
+}

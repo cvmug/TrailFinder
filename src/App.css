@@ -10,3 +10,8 @@ html {
 *{
   font-family: 'Open Sans', sans-serif;
 }
+
+.App{
+  /* background-color: rgb(209, 218, 200); */
+  height: 100vh;
+}

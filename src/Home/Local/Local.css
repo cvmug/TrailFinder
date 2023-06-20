@@ -1,0 +1,62 @@
+.local-trails-section {
+    margin-top: 40px;
+    padding-top: 50px;
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+  
+  .local-trails-heading {
+    color: rgb(16, 65, 16);
+    /* flex: 1; */
+    font-size: 24px;
+    padding-right: 2em; /* Adjust the padding value as needed */
+    /* margin-top: auto; */
+    margin-bottom: auto;
+  }
+
+  .local-heading{
+    margin-bottom: 0px;
+  }
+  
+  .local-subheading{
+    margin-top: 10px;
+    font-weight: 200;
+    font-size: 1em;
+  }
+  
+  .local-trails-container {
+    color: rgb(16, 65, 16);
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    max-width: 100%;
+  }
+  
+  .trail-box {
+    border-radius: 5%;
+    color: rgb(16, 65, 16);
+    border: 1px solid rgb(16, 65, 16);
+    padding: 36px;
+    text-align: center;
+  }
+  
+  .local-button {
+    font-size: .8em;
+    padding: .8rem 1.5rem;
+    border: none;
+    background-color:  rgb(16, 65, 16);
+    border: 1px solid rgb(16, 65, 16);
+    color: white;
+    border-radius: 5%;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+    animation: fadeIn 4s ease-in-out;  /* Increased duration and changed to ease-in-out */
+    animation-fill-mode: forwards;
+}
+
+.local-button:hover {
+    background-color: rgb(9, 37, 9)
+}
