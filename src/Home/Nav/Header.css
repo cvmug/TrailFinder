@@ -1,0 +1,45 @@
+.trail-finder {
+    font-family: 'Lobster', cursive;
+    font-size: 34px;
+    font-weight: bold;
+    color: rgb(25, 92, 25);
+    margin-right: auto;
+    margin-left: 1em;
+    margin-bottom: none;
+    padding: none;
+}
+
+.home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: none;
+    padding: 10px;
+    height: 60px;
+    background-color: white;
+}
+
+.right {
+    margin-right: 1em;
+    display: flex;
+    gap: 40px;
+    margin-bottom: none;
+    margin-left: auto;
+}
+
+.contact {
+    margin-top: 1px;
+    color: rgb(25, 92, 25);
+}
+
+.search {
+    margin-top: 5px;
+    color: rgb(25, 92, 25);
+}
+
+.link {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: none;
+}
