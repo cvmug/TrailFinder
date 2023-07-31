@@ -109,7 +109,7 @@
     padding: 20px;
     margin-bottom: 10px;
     text-align: center;
-    transition: background-color 0.3s;
+    transition: background-color 0.5s;
     /* margin: 20px; */
     flex: 0 0 250px;
     /* Set a fixed width for the boxes */
@@ -127,14 +127,14 @@
     background-color: rgba(0, 0, 0, 0.5);
     /* Adjust the darkness of the overlay */
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s;
 }
 
 .link-box:hover::before {
     opacity: 1;
 }
 
-.link-box h3 {
+.link-box .home-h3 {
     font-size: 30px;
     position: absolute;
     top: 40%;
@@ -145,7 +145,7 @@
     transition: color 0.3s;
 }
 
-.link-box:hover h3 {
+.link-box:hover .home-h3 {
     color: #fff;
     /* Show the text on hover */
 }
@@ -161,7 +161,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     /* Adjust the darkness of the overlay */
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s;
 }
 
 .link-box:hover::before {
@@ -191,18 +191,6 @@
     background-image: url('https://www.tripsavvy.com/thmb/OOChkpfWdyybX2c6siPA31_0tpU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/autumn-color-and-snow-at-foot-of-mount-madison-in-presidential-range-of-new-hampshires-white-mountains--white-mountain-national-forest--new-hampshire--usa-556444377-5bff656d4cedfd002653df0d.jpg');
     background-size: cover;
     background-position: center;
-}
-
-.local-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    /* Add width to make the local container take up full width */
-    /* margin-bottom: 40px; */
-    padding-bottom: 90px;
-    background-color: antiquewhite;
 }
 
 .loading-animation-container {

@@ -15,6 +15,9 @@ const Home = () => {
   const [animationData, setAnimationData] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
+  const NPS_API_KEY = process.env.REACT_APP_NPS_API_KEY;
+
+
   const fetchParks = useCallback(async () => {
     setIsLoading(true);
     setIsImageLoaded(false);
@@ -32,7 +35,7 @@ const Home = () => {
             params: {
               limit: 50,
               designation: 'National Park',
-              api_key: 'hyH0Z9SbWd3rRNDSqJIZnaKp1qc0D8oWwgQapp5D',
+              api_key: NPS_API_KEY,
             },
           }
         );
@@ -116,16 +119,16 @@ const Home = () => {
         <h3 className='resources-subheading'>Click on an image below to find out more</h3>
         <div className="link-section">
           <Link to="/map" className="link-box map-box">
-            <h3>National Parks Map</h3>
+            <h3 className='home-h3'>National Parks Map</h3>
           </Link>
           <Link to="/quiz" className="link-box quiz-box">
-            <h3>Trail Finder Quiz</h3>
+            <h3 className='home-h3'>Trail Finder Quiz</h3>
           </Link>
           <Link to="/trending" className="link-box trending-box">
-            <h3>Trending Trails</h3>
+            <h3 className='home-h3'>Trending Trails</h3>
           </Link>
           <Link to="/quiz" className="link-box forests-box">
-            <h3>National Forests</h3>
+            <h3 className='home-h3'>National Forests</h3>
           </Link>
         </div>
       </div>
