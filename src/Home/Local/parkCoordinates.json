@@ -1,0 +1,443 @@
+[
+    {
+        "name": "Acadia National Park",
+        "coordinates": {
+            "latitude": 44.3386,
+            "longitude": -68.2733
+        }
+    },
+    {
+        "name": "Arches National Park",
+        "coordinates": {
+            "latitude": 38.7331,
+            "longitude": -109.5925
+        }
+    },
+    {
+        "name": "Badlands National Park",
+        "coordinates": {
+            "latitude": 43.8554,
+            "longitude": -102.3397
+        }
+    },
+    {
+        "name": "Big Bend National Park",
+        "coordinates": {
+            "latitude": 29.1275,
+            "longitude": -103.2425
+        }
+    },
+    {
+        "name": "Biscayne National Park",
+        "coordinates": {
+            "latitude": 25.4824,
+            "longitude": -80.2102
+        }
+    },
+    {
+        "name": "Black Canyon Of The Gunnison National Park",
+        "coordinates": {
+            "latitude": 38.5754,
+            "longitude": -107.7416
+        }
+    },
+    {
+        "name": "Bryce Canyon National Park",
+        "coordinates": {
+            "latitude": 37.5930,
+            "longitude": -112.1871
+        }
+    },
+    {
+        "name": "Canyonlands National Park",
+        "coordinates": {
+            "latitude": 38.3269,
+            "longitude": -109.8783
+        }
+    },
+    {
+        "name": "Capitol Reef National Park",
+        "coordinates": {
+            "latitude": 38.3670,
+            "longitude": -111.2615
+        }
+    },
+    {
+        "name": "Carlsbad Caverns National Park",
+        "coordinates": {
+            "latitude": 32.1742,
+            "longitude": -104.44
+        }
+    },
+    {
+        "name": "Channel Islands National Park",
+        "coordinates": {
+            "latitude": 34.01,
+            "longitude": -119.42
+        }
+    },    
+    {
+        "name": "Congaree National Park",
+        "coordinates": {
+            "latitude": 33.78,
+            "longitude": -80.78
+        }
+    },    
+    {
+        "name": "Crater Lake National Park",
+        "coordinates": {
+            "latitude": 42.94,
+            "longitude": -122.10
+        }
+    },   
+    {
+        "name": "Cuyahoga Valley National Park",
+        "coordinates": {
+            "latitude": 41.24,
+            "longitude": -81.55
+        }
+    },
+    {
+        "name": "Death Valley National Park",
+        "coordinates": {
+            "latitude": 36.24,
+            "longitude": -116.82
+        }
+    },         
+    {
+        "name": "Denali National Park",
+        "coordinates": {
+            "latitude": 63.33,
+            "longitude": -150.50
+        }
+    },
+    {
+        "name": "Dry Tortugas National Park",
+        "coordinates": {
+            "latitude": 24.63,
+            "longitude": -82.87
+        }
+    },
+    {
+        "name": "Everglades National Park",
+        "coordinates": {
+            "latitude": 25.32,
+            "longitude": -80.93
+        }
+    },
+    {
+        "name": "Gates of the Arctic National Park",
+        "coordinates": {
+            "latitude": 67.78,
+            "longitude": -153.30
+        }
+    },
+    {
+        "name": "Gateway Arch National Park",
+        "coordinates": {
+            "latitude": 38.63,
+            "longitude": -90.19
+        }
+    },
+    {
+        "name": "Glacier Bay National Park",
+        "coordinates": {
+            "latitude": 58.50,
+            "longitude": -137.00
+        }
+    },
+    {
+        "name": "Glacier National Park",
+        "coordinates": {
+            "latitude": 48.80,
+            "longitude": -114.00
+        }
+    },
+    {
+        "name": "Grand Canyon National Park",
+        "coordinates": {
+            "latitude": 36.06,
+            "longitude": -112.14
+        }
+    },
+    {
+        "name": "Grand Teton National Park",
+        "coordinates": {
+            "latitude": 43.73,
+            "longitude": -110.80
+        }
+    },
+    {
+        "name": "Great Basin National Park",
+        "coordinates": {
+            "latitude": 39.00,
+            "longitude": -114.30
+        }
+    },
+    {
+        "name": "Great Sand Dunes National Park",
+        "coordinates": {
+            "latitude": 37.73,
+            "longitude": -105.51
+        }
+    },
+    {
+        "name": "Great Smoky Mountains National Park",
+        "coordinates": {
+            "latitude": 35.68,
+            "longitude": -83.43
+        }
+    },
+    {
+        "name": "Guadalupe Mountains National Park",
+        "coordinates": {
+            "latitude": 31.92,
+            "longitude": -104.87
+        }
+    },
+    {
+        "name": "Haleakalā National Park",
+        "coordinates": {
+            "latitude": 20.71,
+            "longitude": -156.17
+        }
+    },
+    {
+        "name": "Hawaiʻi Volcanoes National Park",
+        "coordinates": {
+            "latitude": 19.42,
+            "longitude": -155.29
+        }
+    },
+    {
+        "name": "Hot Springs National Park",
+        "coordinates": {
+            "latitude": 34.51,
+            "longitude": -93.05
+        }
+    },
+    {
+        "name": "Indiana Dunes National Park",
+        "coordinates": {
+            "latitude": 41.65,
+            "longitude": -87.06
+        }
+    },
+    {
+        "name": "Isle Royale National Park",
+        "coordinates": {
+            "latitude": 47.99,
+            "longitude": -88.90
+        }
+    },
+    {
+        "name": "Joshua Tree National Park",
+        "coordinates": {
+            "latitude": 33.88,
+            "longitude": -115.90
+        }
+    },
+    {
+        "name": "Katmai National Park",
+        "coordinates": {
+            "latitude": 58.50,
+            "longitude": -155.00
+        }
+    },
+    {
+        "name": "Kenai Fjords National Park",
+        "coordinates": {
+            "latitude": 59.92,
+            "longitude": -149.65
+        }
+    },
+    {
+        "name": "Kings Canyon National Park",
+        "coordinates": {
+            "latitude": 36.80,
+            "longitude": -118.55
+        }
+    },
+    {
+        "name": "Kobuk Valley National Park",
+        "coordinates": {
+            "latitude": 67.55,
+            "longitude": -159.28
+        }
+    },
+    {
+        "name": "Lake Clark National Park",
+        "coordinates": {
+            "latitude": 60.97,
+            "longitude": -153.42
+        }
+    },
+    {
+        "name": "Lassen Volcanic National Park",
+        "coordinates": {
+            "latitude": 40.49,
+            "longitude": -121.51
+        }
+    },
+    {
+        "name": "Mammoth Cave National Park",
+        "coordinates": {
+            "latitude": 37.18,
+            "longitude": -86.10
+        }
+    },
+    {
+        "name": "Mesa Verde National Park",
+        "coordinates": {
+            "latitude": 37.18,
+            "longitude": -108.49
+        }
+    },
+    {
+        "name": "Mount Rainier National Park",
+        "coordinates": {
+            "latitude": 46.85,
+            "longitude": -121.75
+        }
+    },
+    {
+        "name": "National Park of American Samoa",
+        "coordinates": {
+            "latitude": -14.26,
+            "longitude": -170.68
+        }
+    },    
+    {
+        "name": "New River Gorge National Park and Preserve",
+        "coordinates": {
+            "latitude": 38.07,
+            "longitude": -81.08
+        }
+    },
+    {
+        "name": "North Cascades National Park",
+        "coordinates": {
+            "latitude": 48.70,
+            "longitude": -121.20
+        }
+    },
+    {
+        "name": "Olympic National Park",
+        "coordinates": {
+            "latitude": 47.97,
+            "longitude": -123.50
+        }
+    },
+    {
+        "name": "Petrified Forest National Park",
+        "coordinates": {
+            "latitude": 35.07,
+            "longitude": -109.78
+        }
+    },
+    {
+        "name": "Pinnacles National Park",
+        "coordinates": {
+            "latitude": 36.48,
+            "longitude": -121.16
+        }
+    },
+    {
+        "name": "Redwood National Park",
+        "coordinates": {
+            "latitude": 41.30,
+            "longitude": -124.00
+        }
+    },
+    {
+        "name": "Rocky Mountain National Park",
+        "coordinates": {
+            "latitude": 40.35,
+            "longitude": -105.64
+        }
+    },
+    {
+        "name": "Saguaro National Park",
+        "coordinates": {
+            "latitude": 32.25,
+            "longitude": -110.50
+        }
+    },
+    {
+        "name": "Sequoia National Park",
+        "coordinates": {
+            "latitude": 36.43,
+            "longitude": -118.68
+        }
+    },
+    {
+        "name": "Shenandoah National Park",
+        "coordinates": {
+            "latitude": 38.53,
+            "longitude": -78.35
+        }
+    },
+    {
+        "name": "Theodore Roosevelt National Park",
+        "coordinates": {
+            "latitude": 46.97,
+            "longitude": -103.45
+        }
+    },
+    {
+        "name": "Virgin Islands National Park",
+        "coordinates": {
+            "latitude": 18.33,
+            "longitude": -64.73
+        }
+    },
+    {
+        "name": "Voyageurs National Park",
+        "coordinates": {
+            "latitude": 48.50,
+            "longitude": -92.88
+        }
+    },
+    {
+        "name": "White Sands National Park",
+        "coordinates": {
+            "latitude": 32.77,
+            "longitude": -106.33
+        }
+    },
+    {
+        "name": "Wind Cave National Park",
+        "coordinates": {
+            "latitude": 43.57,
+            "longitude": -103.48
+        }
+    },
+    {
+        "name": "Wrangell–St. Elias National Park",
+        "coordinates": {
+            "latitude": 61.00,
+            "longitude": -142.00
+        }
+    },
+    {
+        "name": "Yellowstone National Park",
+        "coordinates": {
+            "latitude": 44.60,
+            "longitude": -110.50
+        }
+    },
+    {
+        "name": "Yosemite National Park",
+        "coordinates": {
+            "latitude": 37.83,
+            "longitude": -119.50
+        }
+    },
+    {
+        "name": "Zion National Park",
+        "coordinates": {
+            "latitude": 37.30,
+            "longitude": -113.05
+        }
+    }
+]
