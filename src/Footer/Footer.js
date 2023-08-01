@@ -17,15 +17,12 @@ const Footer = () => {
         <h4 className="footer-heading">Company</h4>
         <ul className="footer-links">
           <li><Link to="/about">About</Link></li>
-          <li><Link to="/jobs">Jobs</Link></li>
-          <li><Link to="/press">Press</Link></li>
         </ul>
       </div>
       <div className="footer-section">
         <h4 className="footer-heading">Community</h4>
         <ul className="footer-links">
-          <li><Link to="/support">Support</Link></li>
-          <li><Link to="/alltrails-gear">Forum</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </div>
       <div className="footer-bottom">

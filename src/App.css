@@ -15,3 +15,7 @@ html {
   /* background-color: rgb(209, 218, 200); */
   height: 100vh;
 }
+
+a{
+  text-decoration: none;
+}

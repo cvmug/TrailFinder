@@ -7,7 +7,6 @@
     /* Adjust the vertical alignment */
 }
 
-
 .home-container::before {
     content: "";
     position: absolute;
@@ -63,11 +62,12 @@
 }
 
 .resources-links {
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(252, 247, 242) 20%, rgb(248, 243, 238) 40%, rgb(244, 239, 234) 60%);
     /* display: flex;
     flex-direction: row;
     align-items: flex-start; */
     /* margin-top: 90px; */
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     padding-left: 1em;
 }
 
@@ -115,6 +115,7 @@
     /* Set a fixed width for the boxes */
     height: 250px;
     /* Adjust the height as desired */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .link-box::before {

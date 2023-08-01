@@ -11,10 +11,11 @@ export default function Local() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // Set loading state to true initially
   const [animationData, setAnimationData] = useState(null);
-  const [displayedParks, setDisplayedParks] = useState(5); // State variable to keep track of displayed parks
+  const [displayedParks, setDisplayedParks] = useState(6); // State variable to keep track of displayed parks
 
   const NPS_API_KEY = process.env.REACT_APP_NPS_API_KEY;
 
+  
   // Function to calculate distance between user location and park location in miles
   const getDistanceInMiles = (lat1, lon1, lat2, lon2) => {
     const R = 3958.8; // Radius of the earth in miles
@@ -142,11 +143,10 @@ export default function Local() {
   const handleSeeMore = () => {
     const totalParks = parks.length; // Total number of parks fetched from the API
     console.log('Total Parks:', totalParks, 'Currently Displayed:', displayedParks);
-    const nextDisplayedParks = Math.min(displayedParks + 5, totalParks);
+    const nextDisplayedParks = Math.min(displayedParks + 3, totalParks);
     setDisplayedParks(nextDisplayedParks);
   };
   
-
   return (
     <div className="local-trails-section">
       <div className="unit-toggle"></div>

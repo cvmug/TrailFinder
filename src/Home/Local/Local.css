@@ -30,7 +30,6 @@
 
 .local-trails-container {
   color: rgb(16, 65, 16);
-  background-color: antiquewhite;
   flex: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -39,6 +38,29 @@
   max-width: 100%;
   margin: 0px;
   padding: 0px;
+  padding-right: 50px;
+  height: 600px; /* adjust this as needed */
+  overflow: auto; /* enable scrolling when the content overflows */
+}
+
+/* Width */
+.local-trails-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.local-trails-container::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.local-trails-container::-webkit-scrollbar-thumb {
+  background: rgb(16, 65, 16); 
+}
+
+/* Handle on hover */
+.local-trails-container::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 .local-button {
@@ -59,16 +81,6 @@
   border-radius: 5%;
 }
 
-.toggle-button {
-  padding: 5px 10px;
-  border: none;
-  background-color: antiquewhite;
-  border: 1px solid rgb(16, 65, 16);
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 4px;
-}
-
 .local-container {
   flex-grow: 1;
   display: flex;
@@ -78,13 +90,7 @@
   /* Add width to make the local container take up full width */
   /* margin-bottom: 40px; */
   padding-bottom: 90px;
-  background-color: antiquewhite;
-}
-
-/* Style for the toggle button when it's active (selected) */
-.toggle-button.active {
-  background-color: rgb(16, 65, 16);
-  color: #fff;
+  background: linear-gradient(to bottom, antiquewhite 0%, rgb(240, 220, 200) 50%, rgb(200, 180, 160) 80%, rgb(170, 150, 130) 100%); /* from antiquewhite at the top to darker antiquewhite at the bottom */
 }
 
 .local-loading-animation-container {
@@ -98,12 +104,14 @@
   margin-bottom: 10px;
   text-align: center;
   flex: 1 1 150px; /* Adjust the flex property to control the size of the boxes */
-  height: 250px;
+  height: 225px;
   position: relative; /* Add position relative for absolute positioning of the description */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border: 5px solid #ffffff;
 }
 
 .trail-box .local-description {
-  font-size: 15px;
+  font-size: 13px;
   color: transparent;
   transition: color 0.5s;
   position: absolute;
@@ -115,13 +123,21 @@
   align-items: center;
   justify-content: center;
   padding: 10px; /* Optional padding to add some space between the text and edges */
-  overflow: hidden; /* Hide any overflowing content */
+  overflow: auto; /* enable scrolling when the content overflows */
+  max-height: 200px; /* set a maximum height */
 }
-
 
 .trail-box:hover .local-description {
   color: #fff;
   /* Show the text on hover */
+}
+
+.trail-box .local-description::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari */
+}
+
+.trail-box .local-description {
+  scrollbar-width: none; /* For Firefox */
 }
 
 .trail-box::before {
@@ -187,3 +203,4 @@ opacity: 0;
   font-size: 16px; /* Adjust the font size as needed */
   text-align: center; /* Center the distance */
 }
+

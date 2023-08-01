@@ -1,11 +1,12 @@
 .footer-container {
-    background-color: rgb(16, 65, 16);
+    background: linear-gradient(to bottom, rgb(16, 65, 16) 0%, rgb(10, 40, 10) 100%);
     color: #fff;
     padding: 0 20px;
     /* margin-top: 5em; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: 5;
 }
 
 .footer-section {
