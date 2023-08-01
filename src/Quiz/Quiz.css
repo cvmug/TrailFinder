@@ -10,6 +10,7 @@
   animation: fadeIn .5s ease-in;
   margin-top: 5em;
   background-color: rgb(209, 218, 200);
+  border-radius: 5px;
 }
 
 .quiz-h2 {
@@ -23,6 +24,7 @@
 
 .quiz-form {
   width: 100%;
+  border-radius: 5px;
 }
 
 .quiz-label {

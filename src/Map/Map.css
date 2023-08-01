@@ -1,0 +1,125 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, antiquewhite 0%, rgb(240, 220, 200) 50%, rgb(200, 180, 160) 80%, rgb(170, 150, 130) 100%); /* from antiquewhite at the top to darker antiquewhite at the bottom */
+    z-index: 1;
+}
+
+.introduction {
+    padding-left: 10%;
+    text-align: center;
+}
+
+.introduction h2 {
+    color: #104110;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.introduction p {
+    color: #104110;
+    font-size: 18px;
+}
+
+.map {
+    color: rgb(25, 92, 25);
+    flex-grow: 1;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+}
+
+.map-container {
+    display: flex;
+    padding-bottom: 50px;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 75%;
+}
+
+.map-geography {
+    fill: #ffffff;
+    stroke: antiquewhite;
+    stroke-width: 0.75;
+    outline: none;
+    transition: fill 0.2s, stroke 0.2s;
+}
+
+.map-geography:hover {
+    fill: #ffffff;
+    stroke: antiquewhite;
+    stroke-width: 1;
+}
+
+.map-geography:active, .map-geography.selected {
+    fill: #104110;
+    stroke: #546E7A;
+    stroke-width: 1;
+}
+
+.map-geography.selected {
+    box-shadow: 0 0 10px #104110;
+}
+
+.sidebar {
+    margin-top: 100px; /* Change this value to increase/decrease the space */
+    width: 300px;
+    transition: transform 0.5s ease-out;
+    transform: translateX(100%);
+    background-color: #f5f5f5;
+    padding: 20px;
+    overflow-y: auto;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    height: 100%;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    bottom: 200px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.sidebar.visible {
+    transform: translateX(0);
+}
+
+.sidebar h2 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar h3 {
+    color: #555;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sidebar h4 {
+    color: #777;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sidebar div {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.header,
+.footer {
+    z-index: 4;
+    position: relative;
+}

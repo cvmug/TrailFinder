@@ -127,7 +127,7 @@ const Home = () => {
           <Link to="/trending" className="link-box trending-box">
             <h3 className='home-h3'>Trending Trails</h3>
           </Link>
-          <Link to="/quiz" className="link-box forests-box">
+          <Link to="/forests" className="link-box forests-box">
             <h3 className='home-h3'>National Forests</h3>
           </Link>
         </div>
