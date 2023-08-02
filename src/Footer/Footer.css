@@ -13,15 +13,15 @@
     flex: 1 0 auto;
     padding: 1em;
     margin: .5em 0.5em; 
-    text-align: left;
+    text-align: center;
     max-width: 300px;  
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
 }
 
 .footer-heading {
     font-size: 20px;
+    text-align: center;
     font-weight: bold;
     margin-bottom: 15px;
 }

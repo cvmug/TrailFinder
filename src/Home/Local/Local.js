@@ -15,7 +15,7 @@ export default function Local() {
 
   const NPS_API_KEY = process.env.REACT_APP_NPS_API_KEY;
 
-  
+
   // Function to calculate distance between user location and park location in miles
   const getDistanceInMiles = (lat1, lon1, lat2, lon2) => {
     const R = 3958.8; // Radius of the earth in miles
@@ -146,7 +146,7 @@ export default function Local() {
     const nextDisplayedParks = Math.min(displayedParks + 3, totalParks);
     setDisplayedParks(nextDisplayedParks);
   };
-  
+
   return (
     <div className="local-trails-section">
       <div className="unit-toggle"></div>
@@ -180,7 +180,9 @@ export default function Local() {
                   Distance: {getDistanceInMiles(location.lat, location.lng, park.coordinates.latitude, park.coordinates.longitude).toFixed(2)} mi
                 </p>
               </div>
-              <div className="local-description">{park.description}</div>
+              <div className="local-description">    <div class="text-content">
+                {park.description}</div>
+              </div>
               {/* Show the description when hovering over the park's card */}
             </div>
           ))

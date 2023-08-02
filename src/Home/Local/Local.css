@@ -39,28 +39,25 @@
   margin: 0px;
   padding: 0px;
   padding-right: 50px;
-  height: 600px; /* adjust this as needed */
-  overflow: auto; /* enable scrolling when the content overflows */
+  height: 600px;
+  /* adjust this as needed */
+  overflow: auto;
+  /* enable scrolling when the content overflows */
 }
 
 /* Width */
 .local-trails-container::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
-/* Track */
-.local-trails-container::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
 /* Handle */
 .local-trails-container::-webkit-scrollbar-thumb {
-  background: rgb(16, 65, 16); 
+  background: rgb(16, 65, 16);
 }
 
 /* Handle on hover */
 .local-trails-container::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 .local-button {
@@ -81,6 +78,26 @@
   border-radius: 5%;
 }
 
+.trail-box .description-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  overflow: auto;
+  max-height: 200px;
+}
+
+.trail-box .description-container .local-description {
+  font-size: 16px;
+  color: transparent;
+  transition: color 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .local-container {
   flex-grow: 1;
   display: flex;
@@ -90,7 +107,8 @@
   /* Add width to make the local container take up full width */
   /* margin-bottom: 40px; */
   padding-bottom: 90px;
-  background: linear-gradient(to bottom, antiquewhite 0%, rgb(240, 220, 200) 50%, rgb(200, 180, 160) 80%, rgb(170, 150, 130) 100%); /* from antiquewhite at the top to darker antiquewhite at the bottom */
+  background: linear-gradient(to bottom, antiquewhite 0%, rgb(240, 220, 200) 50%, rgb(200, 180, 160) 80%, rgb(170, 150, 130) 100%);
+  /* from antiquewhite at the top to darker antiquewhite at the bottom */
 }
 
 .local-loading-animation-container {
@@ -98,20 +116,40 @@
   margin-top: -100px;
 }
 
+.trail-box .local-description::-webkit-scrollbar {
+  width: 15px;
+  /* increase width of scrollbar */
+}
+
+/* Track */
+.trail-box .local-description::-webkit-scrollbar-track {}
+
+/* Handle */
+.trail-box .local-description::-webkit-scrollbar-thumb {
+  background: rgb(16, 65, 16);
+  /* color of the handle */
+}
+
+/* Handle on hover */
+.trail-box .local-description::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* color of the handle when hovered */
+}
+
 .trail-box {
   border-radius: 5%;
-  padding: 10px; /* Reduce the padding to make the boxes smaller */
+  padding: 10px;
   margin-bottom: 10px;
   text-align: center;
-  flex: 1 1 150px; /* Adjust the flex property to control the size of the boxes */
+  flex: 1 1 150px;
   height: 225px;
-  position: relative; /* Add position relative for absolute positioning of the description */
+  position: relative;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   border: 5px solid #ffffff;
 }
 
 .trail-box .local-description {
-  font-size: 13px;
+  font-size: 16px;
   color: transparent;
   transition: color 0.5s;
   position: absolute;
@@ -119,25 +157,22 @@
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px; /* Optional padding to add some space between the text and edges */
-  overflow: auto; /* enable scrolling when the content overflows */
-  max-height: 200px; /* set a maximum height */
+  padding: 10px;
+  overflow: auto;
+  max-height: 200px;
 }
 
 .trail-box:hover .local-description {
   color: #fff;
-  /* Show the text on hover */
 }
 
-.trail-box .local-description::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari */
-}
-
-.trail-box .local-description {
-  scrollbar-width: none; /* For Firefox */
+.trail-box .local-description .text-content {
+  /* the following properties will center the text when it's less than the height of the box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* This will ensure that text doesn't shrink, and occupies the full width */
+  width: 100%;
 }
 
 .trail-box::before {
@@ -148,9 +183,12 @@
   right: 0;
   bottom: 0;
   border-radius: 5%;
-  background-color: rgba(0, 0, 0, 0.5); /* Darken the background color */
-  opacity: 0; /* Set the opacity to 0 initially to make it transparent */
-  transition: opacity 0.5s; /* Add transition for smooth effect */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Darken the background color */
+  opacity: 0;
+  /* Set the opacity to 0 initially to make it transparent */
+  transition: opacity 0.5s;
+  /* Add transition for smooth effect */
 }
 
 .trail-box::after {
@@ -160,7 +198,8 @@
   left: 0;
   right: 0;
   height: 70%;
-  border-radius: 0 0 5px 5px; /* Add rounded corners only to the bottom */
+  border-radius: 0 0 5px 5px;
+  /* Add rounded corners only to the bottom */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,17 +229,20 @@
   opacity: 0;
 }
 
-.trail-box:hover .name-distance{
-opacity: 0;
+.trail-box:hover .name-distance {
+  opacity: 0;
 }
 
 .local-park-name {
-  font-size: 22px; /* Adjust the font size as needed */
-  text-align: center; /* Center the park name */
+  font-size: 22px;
+  /* Adjust the font size as needed */
+  text-align: center;
+  /* Center the park name */
 }
 
 .distance {
-  font-size: 16px; /* Adjust the font size as needed */
-  text-align: center; /* Center the distance */
+  font-size: 16px;
+  /* Adjust the font size as needed */
+  text-align: center;
+  /* Center the distance */
 }
-

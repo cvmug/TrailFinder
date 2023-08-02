@@ -18,6 +18,10 @@ const Map = () => {
     const NPS_API_KEY = process.env.REACT_APP_NPS_API_KEY;
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
+    useEffect(() => {
         const fetchParksData = async () => {
             if (selectedState) {
                 try {

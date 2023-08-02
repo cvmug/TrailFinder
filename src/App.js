@@ -5,7 +5,7 @@ import Quiz from './Quiz/Quiz';
 import Home from './Home/Home';
 import './App.css';
 import Map from './Map/Map';
-import AllParks from './AllParks';
+import AllParks from './Parks/AllParks';
 import NationalParks from './Parks/NationalParks';
 import StateParks from './Parks/StateParks';
 import Contact from './Contact';
