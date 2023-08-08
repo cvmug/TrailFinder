@@ -126,8 +126,14 @@
 
 /* Handle */
 .trail-box .local-description::-webkit-scrollbar-thumb {
-  background: rgb(16, 65, 16);
+  background: transparent;
   /* color of the handle */
+}
+
+/* Handle on hover */
+.trail-box .local-description:hover::-webkit-scrollbar-thumb {
+  background: rgb(16, 65, 16);
+  /* color of the handle when hovered */
 }
 
 /* Handle on hover */

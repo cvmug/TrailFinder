@@ -18,4 +18,5 @@ html {
 
 a{
   text-decoration: none;
+  color: rgb(16, 65, 16); /* Using the .text-primary color for text */
 }

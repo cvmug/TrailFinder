@@ -1,0 +1,56 @@
+.all-parks-container{
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(252, 247, 242) 20%, rgb(248, 243, 238) 40%, rgb(244, 239, 234) 60%);
+    height: 100vh;
+    color: rgb(16, 65, 16); /* Dark green text */
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    min-height: 100vh; /* Make sure it covers the full viewport height */
+}
+
+.all-parks-content-container{
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(252, 247, 242) 20%, rgb(248, 243, 238) 40%, rgb(244, 239, 234) 60%);
+}
+
+.ant-collapse-item{
+    background-color: rgb(247, 247, 247);
+    color: rgb(16, 65, 16); /* Dark green text */
+}
+
+.ant-collapse-content.ant-collapse-content-active{
+    background-color: rgb(244, 239, 234);
+    color: rgb(16, 65, 16); /* Dark green text */
+}
+
+.ant-collapse-content-box {
+    background-color: rgb(244, 239, 234);
+    color: rgb(16, 65, 16); /* Dark green text */
+    border-radius: 4px; /* Consistency in design */
+}
+
+.ant-collapse-header:hover {
+    background-color: rgb(235, 228, 222); /* Contrast background */
+    color: rgb(16, 65, 16); /* Dark green text */
+}
+
+.ant-collapse-header {
+    background-color: rgb(254, 247, 240); /* Contrast background */
+    border: none; /* Optionally remove default border */
+    color: rgb(16, 65, 16); /* Dark green text */
+    border-radius: 4px; /* Slight rounding for a modern look */
+}
+
+.ant-collapse-header-text{
+    color: rgb(16, 65, 16); /* Dark green text */
+    font-size: 18px;
+}
+
+/* Change the color of the link on hover inside the collapse header */
+.ant-collapse-header:hover a {
+    color: rgb(16, 65, 16); /* Dark green text */
+    text-decoration: underline;
+}
+
+.ant-typography.css-dev-only-do-not-override-19gw05y{
+    color: rgb(16, 65, 16); /* Dark green text */
+    font-size: 16px;
+}

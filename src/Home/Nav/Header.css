@@ -13,13 +13,17 @@
     padding: none;
 }
 
+.trail-finder a:hover {
+    text-decoration: none;
+}
+
 .home-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: none;
     padding: 10px;
-    height: 60px;
+    height: 40px;
     background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 20%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 60%);
 }
 

@@ -17,6 +17,9 @@ const Home = () => {
 
   const NPS_API_KEY = process.env.REACT_APP_NPS_API_KEY;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, []);
 
   const fetchParks = useCallback(async () => {
     setIsLoading(true);

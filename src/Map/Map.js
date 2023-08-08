@@ -19,7 +19,7 @@ const Map = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
 
     useEffect(() => {
         const fetchParksData = async () => {
@@ -57,7 +57,7 @@ const Map = () => {
             <Header />
             <div className="content-container">
                 <div className="introduction">
-                    <h2>United States Parks Map</h2>
+                    <h2 className='us-map'>United States Parks Map</h2>
                     <p>Click on any state in the map to view the parks located in that state.</p>
                 </div>
                 <div className="map-container">

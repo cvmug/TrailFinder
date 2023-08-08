@@ -5,7 +5,7 @@ import Quiz from './Quiz/Quiz';
 import Home from './Home/Home';
 import './App.css';
 import Map from './Map/Map';
-import AllParks from './Parks/AllParks';
+import AllParks from './Parks/AllParks/AllParks';
 import NationalParks from './Parks/NationalParks';
 import StateParks from './Parks/StateParks';
 import Contact from './Contact';
@@ -14,6 +14,7 @@ import Regions from './Regions';
 import Trails from './Trails';
 import Trending from './Trending';
 import NationalForests from './Parks/NationalForests';
+import ParkPage from './Parks/ParkPage/ParkPage';
 
 function App() {
   const imageURL = 'https://cdn.britannica.com/94/94294-050-13990B0E/Glacier-National-Park-Montana.jpg';
@@ -38,6 +39,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/trending" element={<Trending />} />
             <Route path="/forests" element={<NationalForests />} />
+            <Route path='/parks/:nameofpark' element={<ParkPage />} />
           </Routes>
         </main>
         <footer>

@@ -13,6 +13,11 @@
   border-radius: 5px;
 }
 
+.quiz-page{
+  background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(252, 247, 242) 20%, rgb(248, 243, 238) 40%, rgb(244, 239, 234) 60%);
+  height: 100vh;
+}
+
 .quiz-h2 {
   font-family: Lobster;
   font-size: 2em;

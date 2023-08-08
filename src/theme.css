@@ -1,0 +1,23 @@
+/* backgrounds */
+
+/* subtle warm white to darker warm white top to bottom */
+
+.bg-1 {
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(252, 247, 242) 20%, rgb(248, 243, 238) 40%, rgb(244, 239, 234) 60%);
+}
+
+/* light tan to dark tan top to bottom */
+
+.bg-2 {
+    background: linear-gradient(to bottom, antiquewhite 0%, rgb(240, 220, 200) 50%, rgb(200, 180, 160) 80%, rgb(170, 150, 130) 100%);
+}
+
+/* main dark green font and accent color */
+
+.text-primary {
+    color: rgb(25, 92, 25);
+}
+
+.text-secondary {
+    color: rgb(16, 65, 16);
+}
