@@ -9,14 +9,13 @@ export default function Local() {
   const [parks, setParks] = useState([]);
   const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); // Set loading state to true initially
+  const [isLoading, setIsLoading] = useState(true);
   const [animationData, setAnimationData] = useState(null);
-  const [displayedParks, setDisplayedParks] = useState(6); // State variable to keep track of displayed parks
+  const [displayedParks, setDisplayedParks] = useState(6);
 
   const NPS_API_KEY = process.env.REACT_APP_NPS_API_KEY;
 
-  
-  // Function to calculate distance between user location and park location in miles
+
   const getDistanceInMiles = (lat1, lon1, lat2, lon2) => {
     const R = 3958.8; // Radius of the earth in miles
     const dLat = deg2rad(lat2 - lat1);
@@ -49,9 +48,9 @@ export default function Local() {
     const response = await axios.get('https://developer.nps.gov/api/v1/parks', {
       params: {
         start: start,
-        limit: 63, // Adjust this value as per your requirement.
+        limit: 63,
         api_key: NPS_API_KEY,
-        fields: 'images', // Include images in the API response
+        fields: 'images',
       },
     });
 
@@ -62,14 +61,12 @@ export default function Local() {
           const matchingCoordinates = parkCoordinates.find((coords) => coords.name === park.fullName);
           const distance = matchingCoordinates ? getDistanceInMiles(location.lat, location.lng, matchingCoordinates.coordinates.latitude, matchingCoordinates.coordinates.longitude) : null;
 
-          // Get the first image URL if available
           const imageUrl = park.images.length > 0 ? park.images[0].url : null;
 
           return { ...park, coordinates: matchingCoordinates?.coordinates, distance, imageUrl };
         })
     );
 
-    // If response data is less than limit, then we've fetched all parks
     if (response.data.data.length < 63) {
       // Sort parks by distance to user's location
       parksData.sort((a, b) => {
@@ -117,7 +114,6 @@ export default function Local() {
     }
   }, [location]);
 
-  // Function to calculate distance between user location and park location
   const getDistance = (lat1, lon1, lat2, lon2) => {
     const R = 6371; // Radius of the earth in km
     const dLat = deg2rad(lat2 - lat1);
@@ -146,7 +142,7 @@ export default function Local() {
     const nextDisplayedParks = Math.min(displayedParks + 3, totalParks);
     setDisplayedParks(nextDisplayedParks);
   };
-  
+
   return (
     <div className="local-trails-section">
       <div className="unit-toggle"></div>
@@ -166,26 +162,30 @@ export default function Local() {
           </div>
         ) : (
           parks.slice(0, displayedParks).map((park) => (
-            <div
-              key={park.id}
-              className="trail-box"
-              style={{
-                backgroundImage: park.imageUrl ? `url(${park.imageUrl})` : 'none',
-                backgroundSize: 'cover', // Add this line to scale the background image to fit
-              }}
-            >
-              <div className="name-distance">
-                <h3 className="local-park-name">{park.fullName}</h3>
-                <p className="distance">
-                  Distance: {getDistanceInMiles(location.lat, location.lng, park.coordinates.latitude, park.coordinates.longitude).toFixed(2)} mi
-                </p>
+            <Link to={`/parks/${park.parkCode}`} key={park.id}>
+              <div
+                className="trail-box"
+                style={{
+                  backgroundImage: park.imageUrl ? `url(${park.imageUrl})` : 'none',
+                  backgroundSize: 'cover',
+                }}
+              >
+                <div className="name-distance">
+                  <h3 className="local-park-name">{park.fullName}</h3>
+                  <p className="distance">
+                    Distance: {getDistanceInMiles(location.lat, location.lng, park.coordinates.latitude, park.coordinates.longitude).toFixed(2)} mi
+                  </p>
+                </div>
+                <div className="local-description">
+                  <div className="text-content">
+                    {park.description}
+                  </div>
+                </div>
               </div>
-              <div className="local-description">{park.description}</div>
-              {/* Show the description when hovering over the park's card */}
-            </div>
+            </Link>
           ))
         )}
       </div>
     </div>
   );
-}  
+} 

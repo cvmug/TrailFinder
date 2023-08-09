@@ -1,7 +1,8 @@
 .content-container {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, antiquewhite 0%, rgb(240, 220, 200) 50%, rgb(200, 180, 160) 80%, rgb(170, 150, 130) 100%); /* from antiquewhite at the top to darker antiquewhite at the bottom */
+    background: linear-gradient(to bottom, antiquewhite 0%, rgb(240, 220, 200) 50%, rgb(200, 180, 160) 80%, rgb(170, 150, 130) 100%);
+    /* from antiquewhite at the top to darker antiquewhite at the bottom */
     z-index: 1;
 }
 
@@ -11,8 +12,9 @@
 }
 
 .introduction h2 {
-    color: #104110;
-    font-size: 26px;
+    color: rgb(25, 92, 25);
+    font-family: 'Lobster', cursive;
+    font-size: 34px;
     margin-bottom: 10px;
 }
 
@@ -37,6 +39,7 @@
     justify-content: space-between;
     overflow: hidden;
     width: 75%;
+    margin-top: -100px;
 }
 
 .map-geography {
@@ -53,7 +56,8 @@
     stroke-width: 1;
 }
 
-.map-geography:active, .map-geography.selected {
+.map-geography:active,
+.map-geography.selected {
     fill: #104110;
     stroke: #546E7A;
     stroke-width: 1;
@@ -64,7 +68,8 @@
 }
 
 .sidebar {
-    margin-top: 100px; /* Change this value to increase/decrease the space */
+    margin-top: 100px;
+    /* Change this value to increase/decrease the space */
     width: 300px;
     transition: transform 0.5s ease-out;
     transform: translateX(100%);
@@ -122,4 +127,61 @@
 .footer {
     z-index: 4;
     position: relative;
+}
+
+.sidebar-park-name {
+    color: #017d01;
+}
+
+.sidebar-park-name:hover {
+    color: #017d01;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+    .content-container {
+        padding: 0;
+    }
+
+    .introduction {
+        padding-left: 5%;
+    }
+
+    .map-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .map {
+        max-height: 50vh;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    .map, .sidebar {
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar {
+        transition: none;
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+        transform: translateX(0);
+        /* Ensure sidebar is fully visible */
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        padding-top: 0px;
+        /* background-color: rgb(242, 220, 198); */
+    }
+
+    .sidebar.visible {
+        transform: translateX(0);
+        /* Override the translation when sidebar is visible */
+    }
+
 }

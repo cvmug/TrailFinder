@@ -1,0 +1,153 @@
+.park-page {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: linear-gradient(to bottom, antiquewhite 0%, rgb(240, 220, 200) 50%, rgb(200, 180, 160) 80%, rgb(170, 150, 130) 100%);
+    line-height: 1.6;
+    color: rgb(16, 65, 16);
+}
+
+/* Main container styles */
+.park-page-container {
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: rgb(252, 250, 248);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.park-content h1,
+.park-content h2,
+.park-content h3 {
+    color: #005500;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+.park-content h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    border-top: none;
+}
+
+.park-content h2 {
+    font-size: 2rem;
+    margin-top: 25px;
+}
+
+.park-content h3 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-top: none;
+    padding-top: 0;
+}
+
+.alerts,
+.operating-hours,
+.entrance-fees,
+.details,
+.campgrounds,
+.park-contact {
+    border-bottom: 1px solid rgb(154, 169, 154);
+}
+
+/* Image gallery styles */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+.image-item {
+    width: 400px;
+    height: 400px;
+}
+
+.image-item img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 600px;
+    height: 600px;
+}
+
+.image-item:hover img {
+    transform: scale(1.1);
+}
+
+.image-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-item:hover .image-title {
+    opacity: 1;
+}
+
+/* Details section */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.location {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.park-page-name {
+    margin-bottom: 0;
+}
+
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.directions-link {
+    text-decoration: underline;
+}
+
+.directions-link:hover {
+    color: #017d01;
+}

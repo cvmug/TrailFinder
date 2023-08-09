@@ -5,15 +5,17 @@ import Quiz from './Quiz/Quiz';
 import Home from './Home/Home';
 import './App.css';
 import Map from './Map/Map';
-import AllParks from './AllParks';
+import AllParks from './Parks/AllParks/AllParks';
 import NationalParks from './Parks/NationalParks';
 import StateParks from './Parks/StateParks';
-import Contact from './Contact';
+import Contact from './Contact/Contact';
 import About from './About';
 import Regions from './Regions';
 import Trails from './Trails';
 import Trending from './Trending';
 import NationalForests from './Parks/NationalForests';
+import ParkPage from './Parks/ParkPage/ParkPage';
+import Search from './Search';
 
 function App() {
   const imageURL = 'https://cdn.britannica.com/94/94294-050-13990B0E/Glacier-National-Park-Montana.jpg';
@@ -27,7 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/map" element={<Map  />} />
+            <Route path="/map" element={<Map />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/parks" element={<AllParks />} />
             <Route path="/parks/national" element={<NationalParks />} />
@@ -38,10 +40,11 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/trending" element={<Trending />} />
             <Route path="/forests" element={<NationalForests />} />
+            <Route path='/parks/:nameofpark' element={<ParkPage />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </main>
         <footer>
-          {/* <p>&copy; 2023 ParkTrailFinder. All rights reserved.</p> */}
         </footer>
       </div>
     </Router>
