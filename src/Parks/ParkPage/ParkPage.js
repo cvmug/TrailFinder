@@ -49,6 +49,8 @@ const ParkPage = () => {
 
     const fullStateNames = parkData.states.split(',').map(abbrev => stateNames[abbrev]).join(', ');
 
+    const parkDescription = parkData.description;
+
     return (
         <div className='park-page'>
             <Header />
@@ -56,7 +58,7 @@ const ParkPage = () => {
                 <div className="park-content">
                     <h1 className='park-page-name'>{parkData.fullName}</h1>
                     <p className='location'>{fullStateNames}</p>
-
+                    <p className='park-description'>{parkDescription}</p>
                     <section className="image-gallery">
                         <Lightbox images={imagesForLightbox} />
                     </section>

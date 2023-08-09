@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Contact = () => {
-
+const Search = () => {
   return (
     <div style={{ textAlign: 'center', padding: '2rem' }}>
       <h1>Coming Soon</h1>
@@ -14,4 +13,4 @@ const Contact = () => {
   )
 }
 
-export default Contact;
+export default Search;

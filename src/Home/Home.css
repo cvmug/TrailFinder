@@ -211,3 +211,13 @@
 .fade-in-out {
     transition: opacity 0.5s;
 }
+
+@media only screen and (max-width: 768px) {
+    .link-box .home-h3 {
+      color: #fff; /* Show the text on mobile */
+    }
+
+    .link-box::before {
+      opacity: 1; /* Show the overlay on mobile */
+    }
+}

@@ -36,15 +36,10 @@
 
 .park-content h3 {
     font-size: 1.3rem;
-    /* Adjust size for better hierarchy */
     margin-top: 20px;
-    /* Space it a bit more than before */
     margin-bottom: 10px;
-    /* Add space below */
     border-top: none;
-    /* Remove border top */
     padding-top: 0;
-    /* Reset padding */
 }
 
 .alerts,
@@ -59,11 +54,18 @@
 /* Image gallery styles */
 .image-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 10px;
     margin-top: 15px;
     position: relative;
 }
+
+@media screen and (min-width: 768px) {
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
 .image-item {
     width: 400px;
     height: 400px;
@@ -74,6 +76,8 @@
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    width: 600px;
+    height: 600px;
 }
 
 .image-item:hover img {
@@ -113,7 +117,6 @@ strong {
 .location {
     font-size: 1.5em;
     margin: 0;
-    padding-bottom: 20px;
 }
 
 .park-page-name {
@@ -141,10 +144,10 @@ strong {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.directions-link{
+.directions-link {
     text-decoration: underline;
 }
 
-.directions-link:hover{
+.directions-link:hover {
     color: #017d01;
 }

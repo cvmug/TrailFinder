@@ -1,0 +1,77 @@
+.contact-page-container {
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(230, 225, 220) 100%);
+    min-height: 100vh;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contact-contact {
+    color: rgb(34, 67, 34);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.questions {
+    color: rgb(16, 65, 16);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form-group {
+    margin-bottom: 20px;
+}
+
+.contact-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: rgb(16, 65, 16);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none; /* Disabling resize for a cleaner look */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+.contact-submit-button {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+    font-size: 1em;
+    border: none;
+    background-color: rgb(16, 65, 16);
+    color: white;
+    padding: 12px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-submit-button:hover {
+    background-color: rgb(9, 37, 9);
+}
