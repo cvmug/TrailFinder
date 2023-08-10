@@ -19,15 +19,15 @@ const ParksDropdown = () => {
 
   return (
     <div className="dropdown" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <button className="dropbtn">Parks</button>
-      {isOpen && (
-        <div className="dropdown-content">
-          <Link to="/parks">All Parks</Link>
-          <Link to="/parks/national">National Parks</Link>
-          <Link to="/parks/state">State Parks</Link>
-        </div>
-      )}
-    </div>
+    <div className="dropbtn" onClick={toggleDropdown}>Parks</div>
+    {isOpen && (
+      <div className="dropdown-content">
+        <Link to="/parks">All Parks</Link>
+        <Link to="/parks/national">National Parks</Link>
+        <Link to="/parks/state">State Parks</Link>
+      </div>
+    )}
+  </div>  
   );
 };
 

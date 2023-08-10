@@ -10,7 +10,6 @@ const Sidebar = ({ selectedState, parksByDesignation, className }) => {
                   <h3>{designation}</h3>
                   {parksByDesignation[designation].map((park, index) => (
                       <div key={index}>
-                          {/* Use the park id or name as a parameter in the URL */}
                           <h4 className='sidebar-park-name'><Link to={`/parks/${park.parkCode}`}>{park.fullName}</Link></h4>
                           <p>{park.description}</p>
                       </div>
