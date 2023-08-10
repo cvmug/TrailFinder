@@ -31,6 +31,7 @@
     margin-right: 1em;
     display: flex;
     gap: 40px;
+    margin-top: 5px;
     margin-bottom: none;
     margin-left: auto;
     color: rgb(16, 65, 16);
@@ -52,12 +53,12 @@
 
     .trail-finder {
         font-size: 28px;
-        margin-left: 10;
+        margin-left: 5px;
     }
 
     .right {
         margin-right: 10px;
         flex-direction: row;
-        gap: 20px;
+        gap: 10px;
     }
 }
